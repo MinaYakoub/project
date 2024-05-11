@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <?php
+    $conn =mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+    
+    if(isset($_POST['submit'])){
+        $name = mysqli_real_escape_string($conn , $_POST['name']);
+        $email = mysqli_real_escape_string($conn , $_POST['email']);
+        $number = $_POST['number'];
+        $date = $_POST['date'];
+        
+        $insert= mysqli_query($conn, "INSERT INTO contact_form (name , email , number , date)
+        VALUES('$name' ,'$email' , '$number', '$date')") or die('query failed');
+
+        if($insert){
+            $message[] = 'appointment made succesfully !';
+        }else{
+            $message[]= 'appointment faild';
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Project</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- header section  -->
+<header class="header fixed-top">
+    <div class="container">
+        <div  class="row align-items-center justify-content-between">
+                <a href="#home" class="logo"> dental<span>Care.</span></a>
+                <nav class="nav">
+                    <a href="#home">home</a>
+                    <a href="#about">about</a>
+                    <a href="#services">services</a>
+                    <a href="#reviews">reviews</a>
+                    <a href="#contact">contact</a>
+                </nav>
+                <a href="#contact" class="link-btn"> make appointment</a> 
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+    </div>
+</header>
+<!-- header section ends ---------------------------------------------------   -->
+
+
+<!-- home sectionnnn ------------------------------------------------------>
+<section class="home" id="home">
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="content  text-center text-md-left">
+                <h3>Let us brighten your smile </h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere et sed fugit eos repudiandae id ullam voluptates vero itaque. Quos deserunt, 
+                    recusandae exercitationem modi officiis cupiditate cum dolore voluptate voluptates.</p>
+                    <a href="#contact" class="link-btn">make appointment</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--home section ends ----------------------------------------------------->
+
+
+<!--about section --------------------------------------------------------->
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 image">
+                <img src="images/about.jpeg" class="w-100 mb-5 mb-md-0"  alt="">
+            </div>
+            <div class="col-md-6 content">
+                <span>about us</span>
+                <h3> True Healthcare For Your Family </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Similique tempore sequi nostrum labore sit tenetur ratione ipsum nesciunt impedit 
+                    aliquam.</p>
+                    <a href="#contact" class="link-btn">make aapointment</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--about section ends --------------------------------------------------------->
+
+
+
+
+<!--services section starts -------------------------------------------------->
+
+<section class="services" id="services">
+
+<h1 class="heading">our services</h1>
+<div class="box-container container">
+    <div class="box">
+        <img src="images/dentist.png" width="40" height="40" alt="" >
+        <h3>Alignment Specialist</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, debitis.</p>
+    </div>
+        <div class="box">
+            <img src="images/dental-tools.png" width="40" height="40" alt="">
+            <h3>Cosmetic dentistry</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, debitis.</p>
+        </div>
+                <div class="box">
+                    <img src="images/dental-tools.png" width="40" height="40" alt="">
+                    <h3>Oral Hygiene Experts</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, debitis.</p>
+                </div><div class="box">
+                    <img src="images/dental-tools.png" width="40" height="40" alt="">
+                    <h3>Root Canal specialist</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, debitis.</p>
+                </div>
+                        <div class="box">
+                            <img src="images/dental-tools.png" width="40" height="40" alt="">
+                            <h3>Live Dental Advisory</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, debitis.</p>
+                        </div><div class="box">
+                            <img src="images/dental-tools.png" width="40" height="40" alt="">
+                            <h3>cavity inspection</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, debitis.</p>
+                        </div>
+</div>
+</section>
+
+<!--services section ends   -------------------------------------------------->
+
+
+
+
+<!--process section starts -------------------------------------------------->
+
+
+<section class="process" id="process">
+    <h1 class="heading">work process</h1>
+    <div class="box-container container">
+        <div class="box">
+            <img src="images/process1.jpeg"   height="300" alt="">
+            <h3>Cosmetic dentistry</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, accusamus!</p>
+        </div>
+                <div class="box">
+                    <img src="images/process2.jpeg" height="300" alt="">
+                    <h3>pediatric dentistry</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, accusamus!</p>
+                </div>
+                        <div class="box">
+                            <img src="images/process3.jpeg" height="300" alt="">
+                            <h3>dental implants</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, accusamus!</p>
+                        </div>
+    </div>
+</section>
+
+<!--process section ends -------------------------------------------------->
+
+
+
+
+
+
+<!--reviews section starts ------------------------------------------------>
+
+<section class="reviews" id="reviews">
+
+<h1 class="heading">satisfied client</h1>
+<div class="box-container container">
+    <div class="box">
+        <img src="images/person.jpeg" width="300" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora accusantium iure quae! Animi similique ad, debitis sunt consectetur impedit possimus.</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>john deo</h3>
+            <span>satisfied client</span>
+    </div>
+        <div class="box">
+            <img src="images/person2.jpeg" width="300" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Tempora accusantium iure quae! Animi similique ad, debitis sunt consectetur impedit possimus.</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>john deo</h3>
+            <span>satisfied client</span>
+        </div><div class="box">
+            <img src="images/person3.jpeg" width="300" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Tempora accusantium iure quae! Animi similique ad, debitis sunt consectetur impedit possimus.</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>john deo</h3>
+            <span>satisfied client</span>
+        </div>
+</div>
+
+</div>
+</section>
+
+<!--reviews section endss ------------------------------------------------>
+
+
+
+
+
+<!--contact section starts -------------------------------------------------->
+
+<section class="contact" id="contact">
+    <h1 class="heading">make appointment</h1> 
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <?php
+            if(isset($message)){
+                foreach($message as $message){
+                    echo '<p class="message">'.$message.'</p>';
+                }
+            };
+             ?>
+    <span>Your Name :</span>
+    <input type="text" name="name" placeholder="Enter Your Name" class="box">
+    <span>Your Email :</span>
+    <input type="email" name="email" placeholder="Enter Your Email" class="box">
+    <span>Your Number :</span>
+    <input type="number" name="number" placeholder="Enter Your Number" class="box">
+    <span>Appointment Date</span>
+    <input type="datetime-local" name="date" class="box">
+    <input type="submit" value="make appointment"  name="submit" class="link-btn">
+</form>
+    
+</section>
+
+<!--contact section endss -------------------------------------------------->
+
+
+
+
+
+<!--footer section starts ------------------------------------------------->
+
+
+<section class="footer">
+    <div class="box-container container">
+        <div class="box">
+            <i class="fas fa-phone"></i>
+            <h3>Phone Number </h3>
+            <p>+124-456-7899</p>
+            <p>+124-666-9999</p>
+        </div>
+        <div class="box">
+            <i class="fa fa-map-marker-alt">
+                <h3>out address</h3>
+                <p>paris  , india - 465597</p>
+            </i>
+        </div>
+                <div class="box">
+                    <i class="fa fa-clock">
+                        <h3>Opening Hours</h3>
+                        <p>00:07am to 10:00pm</p>
+                    </i>
+                </div>
+                <div class="box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Adress </h3>
+                    <p>aderson@gmail.com</p>
+                    <p>cante@gmail.com</p>
+                </div>
+    </div>
+    <div class="credit ">&COPY;  created by <span>MTI TEAM </span> </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!--footer section ends   ------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
